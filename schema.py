@@ -1,0 +1,19 @@
+BOOK_SCHEMA={
+    'type':'object',
+    'properties':{
+        'book_id':{'type':'string'},
+        'title':{'type':'string'},
+        'author':{'type':'string'},
+        'quantity':{'type':'integer'},
+    },
+    'required':['book_id','title','author','quantity']
+}
+
+MEMBER_SCHEMA={
+    'type':'object',
+    'properties':{
+        'member_id':{'type':'string'},
+        'name':{'type':'string'}
+    },
+    'required':['member_id','name']
+}

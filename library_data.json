@@ -1,0 +1,32 @@
+{
+    "books": [
+        {
+            "book_id": "B001",
+            "title": "Six of Crows",
+            "author": "Leigh Bardugo",
+            "quantity": 3
+        },
+        {
+            "book_id": "B002",
+            "title": "5th Horseman",
+            "author": "James Patterson",
+            "quantity": 5
+        },
+        {
+            "book_id": "B003",
+            "title": "The Shadow of the Wind",
+            "author": "Carlos Ruiz Zaf\u00c3\u00b3n",
+            "quantity": 7
+        }
+    ],
+    "members": [
+        {
+            "member_id": "M001",
+            "name": "K Dot"
+        },
+        {
+            "member_id": "M002",
+            "name": "John Doe"
+        }
+    ]
+}
