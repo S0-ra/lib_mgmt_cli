@@ -2,6 +2,12 @@ import json
 import os
 
 file_name='library_data.json'
+CYAN='\033[1;36m'
+PURPLE='\033[1;35m'
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+LIGHT_GRAY = "\033[0;37m"
+RESET='\033[0m'
 
 def read_data():
     if not os.path.exists(file_name):
@@ -25,16 +31,24 @@ def add_member(data,member):
     data['members'].append(member)
     write_data(data)
 
-def check_unique_boook_title(book_title):
-    books=read_data()['books']
-    for book in books:
-        if book['title']==book_title:
-            return False
-    return True
 
-def check_unique_member_id(member_id):
-    members=read_data()['members']
-    for member in members:
-        if member['member_id']==member_id:
-            return False
-    return True
+def clear_screen():
+    os.system('cls' if os.name=='nt' else 'clear')
+
+def print_color_text(color,text):
+    print(f"{color}{text}{RESET}")
+
+def print_title(text):
+    return print_color_text(CYAN,text)
+
+def print_option(text):
+    return print_color_text(PURPLE,text)
+
+def print_success(text):
+    return print_color_text(GREEN,text)
+
+def print_failure(text):
+    return print_color_text(RED,text)
+
+def user_prompt(prompt):
+    return input(f"{LIGHT_GRAY}{prompt}{RESET}")

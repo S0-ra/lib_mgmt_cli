@@ -17,6 +17,12 @@
             "title": "The Shadow of the Wind",
             "author": "Carlos Ruiz Zaf\u00c3\u00b3n",
             "quantity": 7
+        },
+        {
+            "book_id": "B004",
+            "title": "we",
+            "author": "wewe",
+            "quantity": 23
         }
     ],
     "members": [
@@ -27,6 +33,14 @@
         {
             "member_id": "M002",
             "name": "John Doe"
+        },
+        {
+            "member_id": "k001",
+            "name": "Kendrick"
+        },
+        {
+            "member_id": "1212",
+            "name": "meow"
         }
     ]
 }
