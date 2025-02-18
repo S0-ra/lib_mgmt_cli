@@ -2,6 +2,8 @@ import json
 import os
 
 file_name='library_data.json'
+
+# Defining colors for options, title, success, failure
 CYAN='\033[1;36m'
 PURPLE='\033[1;35m'
 RED='\033[1;31m'
@@ -26,11 +28,6 @@ def read_data():
 def write_data(data):
     with open(file_name,'w') as file:
         json.dump(data,file,indent=4) 
-
-def add_member(data,member):
-    data['members'].append(member)
-    write_data(data)
-
 
 def clear_screen():
     os.system('cls' if os.name=='nt' else 'clear')

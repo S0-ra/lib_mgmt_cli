@@ -4,14 +4,26 @@ from validation import *
 class Book:
 
     @staticmethod
-    def search_book(book_title):
-        if book_title.isspace():
+    def search_book_by_title(book_title):
+        if book_title.isspace() or not book_title:
             return None
         books=read_data()['books']
+        matched_books=[]
         for book in books:
-            if book_title.lower() == book['title'].lower():
-                return book
-        return None
+            if book_title.lower() in book['title'].lower():
+                matched_books.append(book)
+        return matched_books if matched_books else None
+    
+    @staticmethod
+    def search_book_by_author(book_author):
+        if book_author.isspace() or not book_author:
+            return None
+        books=read_data()['books']
+        matched_books=[]
+        for book in books:
+            if book_author.lower() in book['author'].lower():
+                matched_books.append(book)
+        return matched_books if matched_books else None
             
     @staticmethod
     def add_book(book):

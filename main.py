@@ -8,9 +8,10 @@ def display_menu():
     print_title("Library Management System\n")
     print_option("1. Add New Book")
     print_option("2. Display All Books")
-    print_option("3. Search for Book")
-    print_option("4. Add New Member")
-    print_option("5. Display All Members")
+    print_option("3. Search for Book by Title")
+    print_option("4. Search for Book by Author")
+    print_option("5. Add New Member")
+    print_option("6. Display All Members")
     print_option("0. Exit")
     print()
 
@@ -21,10 +22,12 @@ def handle_choice(choice):
     elif choice == '2':
         display_books()
     elif choice == '3':
-        search_book()
+        search_book_using_title()
     elif choice == '4':
-        add_new_member()
+        search_book_using_author()
     elif choice == '5':
+        add_new_member()
+    elif choice == '6':
         display_members()
     elif choice == '0':
         print_success("Exiting system......")
@@ -67,14 +70,27 @@ def add_new_book():
     Book.add_book(book)
     print_success(f"Book '{title}' added successfull\n")
 
-def search_book():
+def search_book_using_title():
     print_title('Search Book by Title : \n')
     title = user_prompt("Enter book title to search: ")
-    book = Book.search_book(title)
-    if book:
-        print_success(f"\nBook Found: {book['title']} by {book['author']} (Quantity: {book['quantity']})\n")
+    books = Book.search_book_by_title(title)
+    if books:
+        print_success(f"\nPossible matches found:\n")
+        for book in books:
+            print(f"Title : {book['title']}\n{book['author']}\nQuantity: {book['quantity']}\n")
     else:
-        print_failure("\nBook not found\n")
+        print_failure("\nNo match found\n")
+
+def search_book_using_author():
+    print_title('Search Book by Author : \n')
+    author = user_prompt("Enter book author to search: ")
+    books = Book.search_book_by_author(author)
+    if books:
+        print_success(f"\nPossible matches found:\n")
+        for book in books:
+            print(f"Title : {book['title']}\n{book['author']}\nQuantity: {book['quantity']}\n")
+    else:
+        print_failure("\nNo match found\n")
 
 def add_new_member():
     print_title('Adding New Member : \n')
