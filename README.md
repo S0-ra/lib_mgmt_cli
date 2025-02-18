@@ -16,3 +16,8 @@ A basic library management system CLI made in python which meets the given requi
 
 4. Modular Structure:
     Use more than 4 Python files.
+
+
+To run this program enter the command below in command line
+
+`python main.py`
